@@ -1,0 +1,226 @@
+
+.img_portada_container {
+    position: absolute;
+    width: 100%;
+    height: 65vh;
+    z-index: -1;
+}
+
+.img_portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    position: relative;
+    
+}
+
+.img_portada_container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 3, 55, 0.5);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 82vh;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.titulo { 
+    color: #fff;
+    margin-top: 50px;
+    font-size: 70px;
+    padding-top: 40px;
+    text-align: center;
+    font-family: "Archivo Black", sans-serif;
+}
+.menu_fixed {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(22, 2, 60, 0.668); 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    z-index: 1;
+}
+
+.menu_fixed ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    padding: 15px;
+}
+
+.menu_fixed a {
+    padding-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu_fixed a:hover { color: #4ef401; }
+
+.vacio_decoracion {
+    width: 13px;
+    height: 50vh;
+    background-color: rgba(21, 3, 55, 0.998);
+    top: 0;
+    z-index: 1;
+    margin-left: 0px;
+    display: inline-block;
+    position: sticky;
+    margin-top: 4px;
+    transition: background-color 0.5s ease-in-out;
+}
+.quines_somos {
+    background-color: #f0f0f0;
+    padding-left: 40px;
+    padding-right: 750px;
+    text-align: justify;
+    display: block;
+    flex: 1;
+    position: relative; 
+    margin-top: -320px;
+}
+
+.h3_tituo_qs {
+    color: #080808;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Archivo Black", sans-serif;
+}
+.img_todos{
+    width: 650px;
+    height: 450px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 650px;
+    margin-top: -460px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.8s ease-in-out;
+
+}
+.img_todos:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.div_actividades{
+    color: #ffffff;
+    text-align: center;
+    height: 100%;
+    background-color: #040122;
+    padding-top: 40px;
+    padding-left: 40px;
+    position: relative;
+    margin-top: 100px;
+}
+.h3_titulo_actividades{
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Archivo Black", sans-serif;
+}
+
+.carousel-inner img {
+    max-width: 60%;  
+    height: auto; 
+    margin: auto; 
+}
+
+.carousel-inner2 img {
+    max-width: 30%;  
+    height: auto; 
+    margin: auto; 
+}
+.carousel { margin-top: 50px;}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.menu button, .btn_Club {
+    background-color: rgba(22, 2, 60, 0.668);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+.menu button:hover { color: #4ef401; }
+
+.btn_Club {
+    text-align: center;
+    display: block;
+    margin-top: 25px;
+}
+
+
+.btn_Club:hover {
+    background-color: #4ef401;
+    color: #000;
+}
+.content{
+    display:none;
+    width: 65%;
+    height: 90vh;
+    margin-left: 230px;
+    padding: 10px;
+    background-color: #040122;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+}
+
+.contenido1 { display: inline-block; }
+footer {
+    background-color: #070235;
+    color: #ffffff;
+    padding: 3px;
+    text-align: center;
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+    transition: transform 0.3s ease-in-out; 
+    z-index: 1;
+}
+.link_redes {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.link_redes:hover { color: #4ef401; }
+
+.card {
+    width: 20%;
+    display: inline-block;
+}
+
+.col_juegos{
+
+}
