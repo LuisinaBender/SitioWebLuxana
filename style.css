@@ -36,7 +36,7 @@
     text-align: center;
     margin-bottom: 0px;
 }
-.titulo { 
+.titulo, .titulo_club { 
     color: #fff;
     margin-top: 50px;
     font-size: 70px;
@@ -159,7 +159,7 @@
     justify-content: center;
     padding: 10px;
 }
-.menu button, .btn_Club  {
+.menu button, .btn_Club, .btn-primary-agregar  {
     background-color: rgba(22, 2, 60, 0.668);
     border: none;
     padding: 10px 20px;
@@ -198,6 +198,8 @@
 }
 
 .contenido1 { display: inline-block; }
+
+/* Footer */ 
 footer {
     background-color: #070235;
     color: #ffffff;
@@ -207,7 +209,7 @@ footer {
     bottom: 0; 
     width: 100%;
     transition: transform 0.3s ease-in-out; 
-    z-index: 1;
+    z-index: 100;
 }
 .link_redes {
     color: #ffffff;
@@ -219,10 +221,16 @@ footer {
 
 /* Club de Juegos */
 
-.tituloJuego{
-    color: #080808; /*veeeeeeer*/
+#tituloJuego {
+    color: #fff;
     text-align: center;
 }
+.container_titulo {
+    background-color: #040122;
+    padding-top: 60px;
+    margin-top: -52px;
+}
+
 
 .card {
     width: 20%;
@@ -230,14 +238,21 @@ footer {
 }
 
 
-.boton_container{
-    width: 50%;
+.btn-primary-agregar{
+    width: 15%;
+    height: 50px;
     display: block;
-    background-color: #040122;
+    background-color: rgba(22, 2, 60, 0.668);
     text-align: center;
     border-radius: 5px;;
     margin: auto;
     margin-top: 25px;
+    color: #fff;
+}
+
+.btn-primary-agregar:hover {
+        background-color: #4ef401;
+        color: #000;
 }
 
 
@@ -246,27 +261,37 @@ footer {
     flex-wrap: wrap;
     gap: 1rem; 
     justify-content: center;
-    margin-top: 20px; 
+    padding-top: 25px;
+    background-color: #040122;
+}
+
+#contenedorJuegos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    justify-content: center;
+    padding-top: 25px;
+    background-color: #040122; 
 }
 
 .card {
-    width: 300px;
-    height: 650px; 
+    width: 220px;       
+    height: 500px;      
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     border-radius: 10px;
-    overflow: hidden;
     background-color: #fff;
+    overflow: hidden;
     margin-bottom: 1rem;
     text-align: center;
 }
 
 .card-img-top {
     width: 100%;
-    height: 320px;
-    object-fit: cover; ;
+    height: 200px;       
+    object-fit: cover;
 }
 
 .card-body {
@@ -278,12 +303,6 @@ footer {
 }
 
 .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-text {
-    font-size: 1rem;
+    font-size: 1rem;      
     margin-bottom: 0.3rem;
 }
-
