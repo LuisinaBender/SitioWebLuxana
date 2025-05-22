@@ -33,39 +33,44 @@ appJuegos = {
         .catch(error => console.error("Error al obtener los juegos:", error));
     },
 
-    agregarJuego: () => {
-        const txtId=document.getElementById("txtId");
-        const txtNombreDelJuego = document.getElementById("txtNombreDelJuego");
-        const txtCantidadDeJugadores = document.getElementById("txtCantidadDeJugadores");
-        const txtTiempoDeJuego = document.getElementById("txtTiempoDeJuego");
-        const txtImgUrl = document.getElementById("txtImgUrl");
+agregarJuego: () => {
+    const txtId = document.getElementById("txtId");
+    const txtNombreDelJuego = document.getElementById("txtNombreDelJuego");
+    const txtCantidadDeJugadores = document.getElementById("txtCantidadDeJugadores");
+    const txtTiempoDeJuego = document.getElementById("txtTiempoDeJuego");
+    const txtImgUrl = document.getElementById("txtImgUrl");
 
-        let urlApi = "https://ingenieriasoftware-9437.restdb.io/rest/juegosdemesa";
-        let metodoHttp = "POST";
+    const juegoAGuardar = {
+        "Nombre": txtNombreDelJuego.value,
+        "Jugadores": txtCantidadDeJugadores.value,
+        "Tiempo": txtTiempoDeJuego.value,
+        "Imagen_URL": txtImgUrl.value
+    };
 
-        const juegoAGuardar = {
-            "Nombre": txtNombreDelJuego.value,
-            "Jugadores": txtCantidadDeJugadores.value,
-            "Tiempo": txtTiempoDeJuego.value,
-            "Imagen_URL": txtImgUrl.value
-        };
-        console.log(juegoAGuardar);
+    let urlApi = "https://ingenieriasoftware-9437.restdb.io/rest/juegosdemesa";
+    let metodoHttp = "POST";
 
-        fetch(urlApi, {
-            method: metodoHttp,
-            headers: {
+    // Si hay un ID cargado, significa que estamos editando un juego existente
+    if (txtId.value) {
+        urlApi += `/${txtId.value}`;
+        metodoHttp = "PUT";
+    }
+
+    fetch(urlApi, {
+        method: metodoHttp,
+        headers: {
             'Content-Type': 'application/json',
             'x-apikey': '64f8c70e68885478040bfe82'
-            },
-            body: JSON.stringify(juegoAGuardar)
-        })
-        
-        .then(response => {
-            console.log(response);
-            window.location.href = "club.html";
-        })
-        .catch(error => console.error("Error al agregar el juego:", error));
-    },
+        },
+        body: JSON.stringify(juegoAGuardar)
+    })
+    .then(response => {
+        console.log(response);
+        window.location.href = "club.html"; // o cerrar el modal y recargar la lista si preferís
+    })
+    .catch(error => console.error("Error al guardar el juego:", error));
+},
+
     eliminarJuegos: (idAEliminar, nombreBorrar) => { 
         Swal.fire({
             title: `¿Estás seguro de que deseas borrar el juego "${nombreBorrar}"`,
